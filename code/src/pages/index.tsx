@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import Leaderboard from '../pages/components/leaderboard';
 
 const Home: React.FC = () => {
   const [moles, setMoles] = useState<boolean[]>(Array(9).fill(false));
@@ -100,6 +101,7 @@ const Home: React.FC = () => {
       console.error('Error saving score:', error);
     }
   };
+  
 
   // Fetch the best player
   const fetchBestPlayer = async () => {
@@ -169,6 +171,7 @@ const Home: React.FC = () => {
           />
         ))}
       </div>
+      <Leaderboard/>
     </div>
   );
 };
